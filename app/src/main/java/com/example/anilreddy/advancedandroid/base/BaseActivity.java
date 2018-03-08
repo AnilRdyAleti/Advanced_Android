@@ -5,6 +5,8 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.anilreddy.advancedandroid.di.Injector;
+
 import java.util.UUID;
 
 /**
