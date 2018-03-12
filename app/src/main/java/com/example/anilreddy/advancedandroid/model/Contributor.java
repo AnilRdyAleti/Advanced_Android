@@ -1,6 +1,7 @@
 package com.example.anilreddy.advancedandroid.model;
 
 import com.google.auto.value.AutoValue;
+import com.squareup.moshi.Json;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
@@ -9,13 +10,16 @@ import com.squareup.moshi.Moshi;
  */
 
 @AutoValue
-public abstract class User {
+public abstract class Contributor {
 
     public abstract long id();
 
     public abstract String login();
 
-    public static JsonAdapter<User> jsonAdapter(Moshi moshi) {
-        return new AutoValue_User.MoshiJsonAdapter(moshi);
+    @Json(name = "avatar_url")
+    public abstract long avatarUrl();
+
+    public static JsonAdapter<Contributor> jsonAdapter(Moshi moshi) {
+        return new AutoValue_Contributor.MoshiJsonAdapter(moshi);
     }
 }
