@@ -15,6 +15,7 @@ import com.bluelinelabs.conductor.Router;
 import com.example.anilreddy.advancedandroid.R;
 import com.example.anilreddy.advancedandroid.di.Injector;
 import com.example.anilreddy.advancedandroid.di.ScreenInjector;
+import com.example.anilreddy.advancedandroid.ui.ScreenNavigator;
 
 import java.util.UUID;
 
@@ -30,6 +31,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Inject
     ScreenInjector screenInjector;
+    @Inject
+    ScreenNavigator screenNavigator;
 
     private String instanceId;
     private Router router;
@@ -91,6 +94,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @LayoutRes
     protected abstract int layoutRes();
+
+    protected abstract Controller initialScreen();
 
     @Override
     protected void onDestroy() {
