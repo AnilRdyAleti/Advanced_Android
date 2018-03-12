@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AdvancedAndroid.iml" filepath="$PROJECT_DIR$/AdvancedAndroid.iml" />
+      <module fileurl="file://E:\Android_Dagger\AdvancedAndroid.iml" filepath="E:\Android_Dagger\AdvancedAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android_Dagger.iml" filepath="$PROJECT_DIR$/Android_Dagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\Android_Dagger\app\app.iml" filepath="E:\Android_Dagger\app\app.iml" />
     </modules>
   </component>
 </project>
