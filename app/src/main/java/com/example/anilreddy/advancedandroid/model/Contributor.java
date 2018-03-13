@@ -12,7 +12,7 @@ import com.squareup.moshi.Moshi;
 @AutoValue
 public abstract class Contributor {
 
-    public abstract long id();
+    public abstract Long id();
 
     public abstract String login();
 
