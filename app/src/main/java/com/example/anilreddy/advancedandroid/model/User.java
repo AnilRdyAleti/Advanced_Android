@@ -11,7 +11,7 @@ import com.squareup.moshi.Moshi;
 @AutoValue
 public abstract class User {
 
-    public abstract long id();
+    public abstract Long id();
 
     public abstract String login();
 
