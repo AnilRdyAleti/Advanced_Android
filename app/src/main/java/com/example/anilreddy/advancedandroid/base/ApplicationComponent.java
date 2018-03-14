@@ -1,5 +1,7 @@
 package com.example.anilreddy.advancedandroid.base;
 
+import com.example.anilreddy.advancedandroid.data.RepoServiceModule;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -9,7 +11,9 @@ import dagger.Component;
  */
 
 @Singleton
-@Component (modules = {ApplicationModule.class, ActivityBindingModule.class})
+@Component(modules = {ApplicationModule.class,
+        ActivityBindingModule.class,
+        RepoServiceModule.class,})
 public interface ApplicationComponent {
     void inject(MyApplication myApplication);
 }
