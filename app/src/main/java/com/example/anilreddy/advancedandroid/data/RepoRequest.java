@@ -6,9 +6,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import io.reactivex.Scheduler;
 import io.reactivex.Single;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -24,13 +22,9 @@ public class RepoRequest {
         this.service = service;
     }
 
-    Single<List<Repo>> getTrendingRepo() {
+    public Single<List<Repo>> getTrendingRepo() {
         return service.getTrendingRepos()
-                .map(new Function<TrendingReposResponse, List<Repo>>() {
-                    @Override
-                    public List<Repo> apply(TrendingReposResponse trendingReposResponse) throws Exception {
-                        return trendingReposResponse.repos();
-                    }
-                }).subscribeOn(Schedulers.io());
+                .map(TrendingReposResponse :: repos)
+                .subscribeOn(Schedulers.io());
     }
 }
