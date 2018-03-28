@@ -1,5 +1,6 @@
 package com.example.anilreddy.advancedandroid.trending;
 
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -33,6 +34,13 @@ public class TrendingReposController extends BaseController {
     TextView errorText;
 
     @Override
+    protected void onViewBind(View view) {
+        super.onViewBind(view);
+        repoList.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        repoList.setAdapter(new RepoAdapter(presenter));
+    }
+
+    @Override
     protected int layoutRes() {
         return R.layout.screen_trending_repos;
     }
@@ -49,9 +57,7 @@ public class TrendingReposController extends BaseController {
                 }),
                 viewModel.repos()
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(loading -> {
-                    //TODO
-                }),
+                        .subscribe(((RepoAdapter) repoList.getAdapter())::setData),
                 viewModel.error()
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(errorRes -> {
