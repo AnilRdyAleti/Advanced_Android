@@ -1,7 +1,5 @@
 package com.example.anilreddy.advancedandroid.data;
 
-import com.example.anilreddy.advancedandroid.model.Repo;
-
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -15,8 +13,9 @@ import retrofit2.Retrofit;
 @Module
 public class RepoServiceModule {
 
-    @Singleton
+
     @Provides
+    @Singleton
     static RepoService provideRepoService(Retrofit retrofit){
         return retrofit.create(RepoService.class);
     }

@@ -21,7 +21,7 @@ import io.reactivex.disposables.Disposable;
 
 public class TrendingReposController extends BaseController {
 
-    @Inject
+    //@Inject
     TrendingReposPresenter presenter;
     @Inject
     TrendingReposViewModel viewModel;
